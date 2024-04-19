@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-57w5)pn8mx5d#!c_8u0&sgo-@)q0m!3v1r7&leej41undi@z4=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app", " 127.0.0.1"]
 
 
 # Application definition
@@ -79,23 +79,23 @@ ASGI_APPLICATION = 'mychatproject.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME':'railway',
-#         'USER':'postgres',
-#         'PASSWORD':'lENRWrcqtGaCEWnYlGJrVZARSMDmaqqV',
-#         'HOST':'roundhouse.proxy.rlwy.net',
-#         'PORT':'32999',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'railway',
+        'USER':'postgres',
+        'PASSWORD':'lENRWrcqtGaCEWnYlGJrVZARSMDmaqqV',
+        'HOST':'roundhouse.proxy.rlwy.net',
+        'PORT':'32999',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -133,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'static')
 ]

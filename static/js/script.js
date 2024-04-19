@@ -65,7 +65,7 @@ const sendToWebsocket = function () {
 };
 
 const connectToWebsocket = function (person_id) {
-  const url = `ws://127.0.0.1:8000/websocket/${person_id}/`;
+  const url = `wss://127.0.0.1:8000/websocket/${person_id}/`;
   chat_websocket = new WebSocket(url);
   chat_websocket.onopen = function () {
     chat_websocket.send(`{"type":"entered_chat"}`);
